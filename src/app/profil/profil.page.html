@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Data Pegawai</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row> NIP: {{nip}} </ion-row>
+        <ion-row> Nama: {{nama}} </ion-row>
+        <ion-row> Jabatan: {{jabatan}} </ion-row>
+        <ion-row> Golongan: {{gol}} </ion-row>
+        <ion-row> Jenis Tunjangan: {{jnstun}} </ion-row>
+        <ion-row> Gaji: {{gaji}} </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <ion-button
+      expand="block"
+      shape="round"
+      color="warning"
+      [routerLink]="['/home']"
+      >Kembali</ion-button
+    >
+  </ion-card>
+</ion-content>

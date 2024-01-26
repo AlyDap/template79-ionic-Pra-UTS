@@ -1,20 +1,124 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Input Data Pegawai </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/setting']">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <pre></pre>
+
+    <ion-list>
+      <h2>Input Data Pegawai</h2>
+      <ion-item>
+        <ion-input
+          label="NIP"
+          labelPlacement="floating"
+          placeholder="NIP"
+          [(ngModel)]="nip"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Nama"
+          labelPlacement="floating"
+          placeholder="Nama"
+          [(ngModel)]="nama"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Jabatan"
+          labelPlacement="floating"
+          placeholder="Jabatan"
+          [(ngModel)]="jabatan"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          label="Golongan"
+          placeholder="Golongan"
+          [(ngModel)]="gol"
+        >
+          <ion-select-option value="IIIA">IIIA</ion-select-option>
+          <ion-select-option value="IIIB">IIIB</ion-select-option>
+          <ion-select-option value="IIIC">IIIC</ion-select-option>
+          <ion-select-option value="IVA">IVA</ion-select-option>
+          <ion-select-option value="IVB">IVB</ion-select-option>
+          <ion-select-option value="IVC">IVC</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-input
+          type="date"
+          label="Tanggal Lahir"
+          labelPlacement="floating"
+          placeholder="Tanggal Lahir"
+          [(ngModel)]="tgllhr"
+        ></ion-input>
+      </ion-item> -->
+      <!-- <ion-item>
+        <ion-select
+          label="Jenis Kelamin"
+          placeholder="Jenis Kelamin"
+          [(ngModel)]="jnskel"
+        >
+          <ion-select-option value="Laki-laki">Laki-laki</ion-select-option>
+          <ion-select-option value="Perempuan">Perempuan</ion-select-option>
+        </ion-select>
+      </ion-item> -->
+      <ion-item>
+        <ion-select
+          label="Jenis Tunjangan"
+          placeholder="Jenis Tunjangan"
+          [multiple]="true"
+          [(ngModel)]="jnstun"
+        >
+          <ion-select-option value="Kinerja">Kinerja</ion-select-option>
+          <ion-select-option value="Keluarga">Keluarga</ion-select-option>
+          <ion-select-option value="Anak">Anak</ion-select-option>
+          <ion-select-option value="Kesehatan">Kesehatan</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Gaji"
+          labelPlacement="floating"
+          placeholder="Gaji"
+          type="number"
+          [(ngModel)]="gaji"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      id="simpan"
+      expand="block"
+      shape="round"
+      color="success"
+      (click)="simpan()"
+      [routerLink]="['/profil']"
+      >Simpan</ion-button
+    >
+    <ion-button expand="block" shape="round" color="warning" (click)="clear()"
+      >Clear</ion-button
+    >
+
+    <ion-toast
+      trigger="simpan"
+      message="NIP: {{nip}}, Nama: {{nama}}, Jabatan: {{jabatan}}, Golongan: {{gol}}, Jenis Tunjangan: {{jnstun}}, Gaji: {{gaji}}, "
+      [duration]="5000"
+    >
+    </ion-toast>
   </div>
 </ion-content>
